@@ -1,0 +1,6 @@
+{
+    "gitbook": "3.x.x",
+    "title": "Veeam Plugin for vCD",
+    "plugins": ["theme-veeam"],
+    "pluginsConfig": {}
+}

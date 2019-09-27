@@ -1,0 +1,43 @@
+language: node_js
+dist: trusty
+sudo: required
+
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - node_modules # NPM packages
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - npm install -g gitbook-cli
+
+script:
+  # Ensure we are in the right dir
+  - cd ${TRAVIS_BUILD_DIR}/docs
+  # Convert markdown to html
+  - gitbook install
+  - gitbook build
+
+deploy:
+  #Push the generated gitbook html to the gh-pages branch
+  - provider: pages
+    on:
+      branch: master
+    # Target branch to commit to
+    target-branch: gh-pages
+    # Sets the custom domain for my GitHub page
+    #fqdn: test.test.com
+    # Prevent Travis from deleting your built site so it can be uploaded.
+    skip-cleanup: true
+    # GitHub personal access token
+    github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+    # Path to a directory containing your built site.
+    local-dir: ${TRAVIS_BUILD_DIR}/docs/_book
+
+branches:
+  only:
+    - master

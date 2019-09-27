@@ -1,0 +1,4 @@
+# GitBook ignore file.
+# We ignore everything that isn't docs
+.bookignore
+_unused/*
