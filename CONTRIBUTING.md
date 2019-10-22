@@ -7,6 +7,8 @@ We love your input! We want to make contributing to this project as easy and tra
 * Submitting a fix
 * Proposing new features
 
+All contributions to this repository must be signed as described on our [Developer Certificate of Origin](DCO.md). Your signature certifies that you wrote the contribution or have the right to pass it on as an open source contribution.
+
 Please note we have a [Code of Conduct](#code-of-conduct). Please follow it in all your interactions with the project.
 
 ## Report Bugs/Feature Requests using the Github Issue Tracker
@@ -15,7 +17,7 @@ We use GitHub's Issue Tracker to track bugs/feature Requests. Report a bug or fe
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under its MIT License.
+By contributing, you agree that your contributions will be licensed under the projects original open source license.
 
 ## Code of Conduct
 
@@ -74,7 +76,7 @@ further defined and clarified by project maintainers.
 ### Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team directly on Twitter ([@chris_arceneaux](https://twitter.com/chris_arceneaux)). All
+reported by contacting the project team at <veeamhub@veeam.com>. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
