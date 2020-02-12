@@ -4,8 +4,10 @@ The Veeam Plugin for vCloud Director (vCD) allows the [Veeam vCD Self-Service Ba
 
 This documentation will provide steps for Installing, Configuring, and Using the Veeam Plugin for vCD.
 
+[If you're looking for instructions on how to **upgrade** the Veeam Plugin to the latest version, please click here.](plugin-upgrade-instructions.html)
+
 {% note %}
-This is a notice
+IIS configuration (see step #2 below) must be performed any time you install/upgrade Enterprise Manager.
 {% endnote %}
 
 ## Steps
@@ -20,7 +22,8 @@ This is a notice
 
 ## Veeam Plugin Prerequisites
 
-* Veeam Backup Enterprise Manager (EM) 9.5 Update 4b
-* Supports vCloud Director (vCD) 9.1.0.2 - 9.7
+* Veeam Backup Enterprise Manager (EM) 9.5 Update 4b _and newer_
+* Supports vCloud Director (vCD) 9.1.0.2 - 10.x
+  * _vCD 10.x support requires EM 10.x_
 * Valid SSL Certificates must be configured for both _EM_ and _vCD_
   * Self-Signed SSL Certificates need to be trusted by the client before the plugin will work

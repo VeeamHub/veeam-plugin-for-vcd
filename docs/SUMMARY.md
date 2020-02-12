@@ -1,6 +1,7 @@
 # VEEAM PLUGIN FOR VCD
 
 * [Introduction](README.md)
+* [Upgrading the Veeam Plugin](plugin-upgrade-instructions.md)
 
 ## VEEAM SELF-SERVICE PORTAL
 
