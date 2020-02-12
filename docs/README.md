@@ -4,6 +4,10 @@ The Veeam Plugin for vCloud Director (vCD) allows the [Veeam vCD Self-Service Ba
 
 This documentation will provide steps for Installing, Configuring, and Using the Veeam Plugin for vCD.
 
+{% note %}
+This is a notice
+{% endnote %}
+
 ## Steps
 
 1. [Install and Configure the Veeam vCD Self-Service Backup Portal (VSSP)](vssp-setup.md)
