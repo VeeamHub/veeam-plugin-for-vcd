@@ -1,0 +1,482 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Upgrading the Veeam Plugin · Veeam Plugin for vCD</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            <link rel="stylesheet" href="gitbook/theme.css">
+            <link rel="stylesheet" href="gitbook/theme-fix.css">
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vssp-setup.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body class="wy-body-for-nav">
+        
+<div class="book wy-grid-for-nav">
+    
+    <nav role="navigation" data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <!-- here comes title -->
+                <div role="search">
+                    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+                </div>
+            </div>
+              
+                
+
+
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+    
+    
+
+    
+
+    
+        
+        
+    
+        
+        <li class="toctree-l1 " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    <span class="toctree-expand"></span>
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        
+        <li class="toctree-l1 current" data-level="1.2" data-path="plugin-upgrade-instructions.html">
+            
+                <a href="plugin-upgrade-instructions.html">
+            
+                    <span class="toctree-expand"></span>
+                    Upgrading the Veeam Plugin
+            
+                </a>
+            
+
+            
+                
+                
+                <ul>
+                    
+                    
+                    
+                    <li class="toctree-l2"><a class="reference internal" href="#how-to-upgrade-the-veeam-plugin">How to upgrade the Veeam Plugin</a></li>
+                    
+                    
+                    
+                    <li class="toctree-l2"><a class="reference internal" href="#removing-the-veeam-plugin-from-vcd">Removing the Veeam Plugin from vCD</a></li>
+                    
+                </ul>
+                
+            
+        </li>
+    
+
+    
+        
+        <p class="caption"><span class="caption-text">VEEAM SELF-SERVICE PORTAL</span></p>
+        
+        
+    
+        
+        <li class="toctree-l1 " data-level="2.1" data-path="vssp-setup.html">
+            
+                <a href="vssp-setup.html">
+            
+                    <span class="toctree-expand"></span>
+                    1. VSSP Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        
+        <li class="toctree-l1 " data-level="2.2" data-path="vssp-iis-config.html">
+            
+                <a href="vssp-iis-config.html">
+            
+                    <span class="toctree-expand"></span>
+                    2. IIS Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <p class="caption"><span class="caption-text">VEEAM PLUGIN DEPLOYMENT</span></p>
+        
+        
+    
+        
+        <li class="toctree-l1 " data-level="3.1" data-path="plugin-deployment-methods.html">
+            
+                <a href="plugin-deployment-methods.html">
+            
+                    <span class="toctree-expand"></span>
+                    3. Deployment Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="toctree-l2 " data-level="3.1.1" data-path="plugin-deploy-plugin-manager.html">
+            
+                <a href="plugin-deploy-plugin-manager.html">
+            
+                    <span class="toctree-expand"></span>
+                    Using VMware Plugin Lifecycle Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        
+        <li class="toctree-l2 " data-level="3.1.2" data-path="plugin-deploy-python.html">
+            
+                <a href="plugin-deploy-python.html">
+            
+                    <span class="toctree-expand"></span>
+                    Using Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <p class="caption"><span class="caption-text">VEEAM PLUGIN CONFIGURATION</span></p>
+        
+        
+    
+        
+        <li class="toctree-l1 " data-level="4.1" data-path="plugin-configuration-provider.html">
+            
+                <a href="plugin-configuration-provider.html">
+            
+                    <span class="toctree-expand"></span>
+                    4. vCD Provider Portal Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        
+        <li class="toctree-l1 " data-level="4.2" data-path="plugin-usage-tenant.html">
+            
+                <a href="plugin-usage-tenant.html">
+            
+                    <span class="toctree-expand"></span>
+                    5. vCD Tenant Portal Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+</div>
+
+            
+            
+        </div>
+    </nav>
+    
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars shift-menu"></i>
+            <a href="#">Upgrading the Veeam Plugin</a>
+            
+                <!-- <i data-toggle="wy-nav-top" class="fa fa-bars"></i> -->
+            
+        </nav>
+        <div class="wy-nav-content">
+            
+                <div class="rst-content">
+                    
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        <li><a href="javascript:void(0)">Upgrading the Veeam Plugin</a></li>
+        <!--
+        <li class="wy-breadcrumbs-aside">
+            <a href="javascript:void(0)" class="language-picker"><i class="fa fa-globe"></i> <i class="fa fa-caret-down"></i></a>
+            <ul class="language-dropdown">
+                
+            </ul>
+        </li>
+        <li class="wy-breadcrumbs-aside">        
+            <a href="https://github.com/coleifer/peewee/blob/master/docs/peewee/models.rst" class="fa fa-github"> Edit on GitHub</a>
+        </li>
+        -->
+    </ul>
+    <hr>
+</div>
+
+
+
+
+                    
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                            <div itemprop="articleBody">
+                                <div class="section"> <!-- rtd needs a section to handle css properly -->
+                                
+                                <h1 id="veeam-plugin-for-vcd">Veeam Plugin for vCD</h1>
+<h2 id="how-to-upgrade-the-veeam-plugin">How to upgrade the Veeam Plugin</h2>
+<p>These instructions are for Service Providers explaining how to upgrade the Veeam Plugin for vCD to the latest version. The upgrade process can be broken down into these simple steps:</p>
+<ol>
+<li>Remove the current Veeam Plugin from vCD</li>
+<li><a href=".#steps">Follow normal plugin Installation/Configuration Steps</a></li>
+</ol>
+<h2 id="removing-the-veeam-plugin-from-vcd">Removing the Veeam Plugin from vCD</h2>
+<p>Removal of the Veeam Plugin from vCD depends on the version of vCD that you&apos;re running. If you&apos;re running vCD 9.7 <em>or newer</em>, the recommended method would be using the <a href="#using-vmware-plugin-lifecycle-manager">VMware Plugin Lifecycle Manager</a>. If you&apos;re running vCD 9.1 or 9.5, the recommended method would be using <a href="#using-python">Python</a>.</p>
+<h3 id="using-vmware-plugin-lifecycle-manager">Using VMware Plugin Lifecycle Manager</h3>
+<ul>
+<li>Open <code>Customize Portal</code> or <code>Plugin Lifecycle Management</code> from the drop-down in the vCD Provider Portal<ul>
+<li><em>Example:</em> <code>https://vcd.home.lab/provider</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="images/vcd-dropdown-with-customize.png" alt="vCD Drop-Down with Customize Portal"></p>
+<ul>
+<li>Mark the checkbox next to the <code>Veeam Self-Service Portal</code> plugin and click <code>DELETE</code></li>
+</ul>
+<p><img src="images/delete-veeam-plugin.png" alt="Delete Veeam Plugin"></p>
+<ul>
+<li>Refresh your browser window (or logout/login to vCD)</li>
+<li>Verify the plugin no longer shows up in the drop-down for vCD</li>
+</ul>
+<p><img src="images/vcd-dropdown-plugin-manager.png" alt="VMware Plugin Lifecycle Manager"></p>
+<ul>
+<li>You can now proceed with the <a href=".#steps">normal plugin Installation/Configuration Steps</a></li>
+</ul>
+<h3 id="using-python">Using Python</h3>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>Python 3.4+</li>
+<li>Python libraries required:<ul>
+<li><code>requests</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="steps">Steps</h4>
+<ul>
+<li><a href="https://github.com/VeeamHub/veeam-plugin-for-vcd/releases/latest" target="_blank">Download the current plugin</a><ul>
+<li><code>veeam-vcd-plugin-X.X.X.zip</code></li>
+</ul>
+</li>
+<li>Unzip the plugin to your computer, open a terminal, &amp; navigate to the plugin folder</li>
+<li>Modify the values in the <code>manage_plugin.json</code> accordingly for your vCD environment<ul>
+<li><em>System Administrator account is required</em></li>
+</ul>
+</li>
+</ul>
+<p><em>Sample <code>manage_plugin.json</code>:</em></p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;administrator&quot;</span>,
+  <span class="hljs-string">&quot;org&quot;</span>: <span class="hljs-string">&quot;System&quot;</span>,
+  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;P@$$w0rd&quot;</span>,
+  <span class="hljs-string">&quot;vcdUrlBase&quot;</span>: <span class="hljs-string">&quot;https://vmware.example.com&quot;</span>
+}
+</code></pre>
+<ul>
+<li>Execute the Python script below to list already install vCD plugins:</li>
+</ul>
+<pre><code class="lang-text">python3 ./manage_plugin.py list
+</code></pre>
+<ul>
+<li>Find plugin named <code>Veeam Self-Service Portal by Veeam</code> and copy the <code>ID</code> field as shown below</li>
+</ul>
+<p><img src="images/python-list.png" alt="Python List"></p>
+<ul>
+<li>Execute the Python script below to remove the plugin from vCD:</li>
+</ul>
+<pre><code class="lang-text">python3 ./manage_plugin.py unregister &lt;plugin-id&gt;
+</code></pre>
+<ul>
+<li>Refresh your browser window (or logout/login to vCD)</li>
+<li>Verify the plugin no longer shows up in the drop-down for vCD</li>
+</ul>
+<p><img src="images/vcd-dropdown-plugin-manager.png" alt="VMware Plugin Lifecycle Manager"></p>
+<ul>
+<li>You can now proceed with the <a href=".#steps">normal plugin Installation/Configuration Steps</a></li>
+</ul>
+
+                                
+                                </div>
+                            </div>
+                        
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                    </div>
+                    <footer>
+                            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+                                
+                                    
+                                        <a href="./" class="btn btn-neutral" title="" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+                                    
+                                    
+                                        <a href="vssp-setup.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+                                    
+                                
+                            </div>
+                    </footer>
+                    
+                </div>
+            
+        </div>
+    </section>
+
+    
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Upgrading the Veeam Plugin","level":"1.2","depth":1,"next":{"title":"1. VSSP Setup","level":"2.1","depth":1,"path":"vssp-setup.md","ref":"vssp-setup.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-veeam"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-veeam":{"langs":["en"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Veeam Plugin for vCD","gitbook":"3.x.x"},"file":{"path":"plugin-upgrade-instructions.md","mtime":"2020-02-13T19:17:59.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-13T19:19:05.606Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme-default.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
