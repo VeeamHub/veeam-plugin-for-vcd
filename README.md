@@ -10,7 +10,7 @@ Here are some resources to help you deploy & configure the plugin:
 
 * [Getting Started Guide](https://veeamhub.github.io/veeam-plugin-for-vcd/)
 
-[![Veeam Plugin for vCD Demonstration](https://img.youtube.com/vi/By4G_WH9k40/0.jpg)](https://www.youtube.com/watch?v=By4G_WH9k40)
+[![Veeam Plugin for vCD Demonstration](https://img.youtube.com/vi/By4G_WH9k40/0.jpg)](https://www.youtube.com/watch?v=8oFbJMhHaak)
 
 ## ✍ Contributions
 

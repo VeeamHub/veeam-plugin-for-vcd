@@ -2,17 +2,17 @@
 
 ## VMware Plugin Lifecycle Manager
 
-As the [VMware Plugin Lifecycle Manager](https://github.com/vmware-samples/vcd-ext-samples/tree/customize-portal) comes pre-installed with vCloud Director 9.7, it's the easiest method for deploying the Veeam Plugin for vCD. It can also be installed for versions 9.1 & 9.5 using these [instructions](https://github.com/vmware-samples/vcd-ext-samples/tree/customize-portal).
+As the [VMware Plugin Lifecycle Manager](https://github.com/vmware-samples/vcd-ext-samples/tree/customize-portal) comes pre-installed with vCloud Director 9.7 _and newer_, it's the easiest method for deploying the Veeam Plugin for vCD. It can also be installed for versions 9.1 & 9.5 using these [instructions](https://github.com/vmware-samples/vcd-ext-samples/tree/customize-portal).
 
 ### Requirements
 
 * [VMware Plugin Lifecycle Manager](https://github.com/vmware-samples/vcd-ext-samples/tree/customize-portal)
-  * _Pre-Installed with vCloud Director 9.7_
+  * _Pre-Installed with vCloud Director 9.7 and newer_
 
 ### Deployment Steps
 
 * [Download the current plugin](https://github.com/VeeamHub/veeam-plugin-for-vcd/releases/latest)
-  * `plugin.zip`
+* Unzip the plugin files `veeam-vcd-plugin-X.X.X.zip`
 * Open `Customize Portal` or `Plugin Lifecycle Management` from the drop-down in the vCD Provider Portal
   * *Example:* `https://vcd.home.lab/provider`
 
