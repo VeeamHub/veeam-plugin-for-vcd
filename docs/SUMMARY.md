@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Upgrading the Veeam Plugin](plugin-upgrade-instructions.md)
+* [Uninstalling the Veeam Plugin](plugin-uninstall-instructions.md)
 
 ## VEEAM SELF-SERVICE PORTAL
 
@@ -16,5 +17,5 @@
 
 ## VEEAM PLUGIN CONFIGURATION
 
-* [4. vCD Provider Portal Configuration](plugin-configuration-provider.md)
-* [5. vCD Tenant Portal Usage](plugin-usage-tenant.md)
+* [4. VCD Provider Portal Configuration](plugin-configuration-provider.md)
+* [5. VCD Tenant Portal Usage](plugin-usage-tenant.md)
