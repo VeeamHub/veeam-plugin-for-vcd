@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · Veeam Plugin for VCD</title>
+        <title>Uninstalling the Veeam Plugin · Veeam Plugin for VCD</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,8 +59,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="plugin-upgrade-instructions.html" />
+    <link rel="next" href="vssp-setup.html" />
     
+    
+    <link rel="prev" href="plugin-upgrade-instructions.html" />
     
 
     </head>
@@ -95,7 +97,7 @@
         
     
         
-        <li class="toctree-l1 current" data-level="1.1" data-path="./">
+        <li class="toctree-l1 " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -105,21 +107,6 @@
                 </a>
             
 
-            
-                
-                
-                <ul>
-                    
-                    
-                    
-                    <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
-                    
-                    
-                    
-                    <li class="toctree-l2"><a class="reference internal" href="#veeam-plugin-prerequisites">Veeam Plugin Prerequisites</a></li>
-                    
-                </ul>
-                
             
         </li>
     
@@ -138,7 +125,7 @@
         </li>
     
         
-        <li class="toctree-l1 " data-level="1.3" data-path="plugin-uninstall-instructions.html">
+        <li class="toctree-l1 current" data-level="1.3" data-path="plugin-uninstall-instructions.html">
             
                 <a href="plugin-uninstall-instructions.html">
             
@@ -148,6 +135,25 @@
                 </a>
             
 
+            
+                
+                
+                <ul>
+                    
+                    
+                    
+                    <li class="toctree-l2"><a class="reference internal" href="#how-to-uninstall-the-veeam-plugin">How to uninstall the Veeam Plugin</a></li>
+                    
+                    
+                    
+                    <li class="toctree-l2"><a class="reference internal" href="#removing-the-veeam-plugin-from-vcd">Removing the Veeam Plugin from VCD</a></li>
+                    
+                    
+                    
+                    <li class="toctree-l2"><a class="reference internal" href="#removing-the-custom-iis-configuration">Removing the custom IIS configuration</a></li>
+                    
+                </ul>
+                
             
         </li>
     
@@ -289,7 +295,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
         <nav class="wy-nav-top" aria-label="top navigation">
             <i data-toggle="wy-nav-top" class="fa fa-bars shift-menu"></i>
-            <a href="#">Introduction</a>
+            <a href="#">Uninstalling the Veeam Plugin</a>
             
                 <!-- <i data-toggle="wy-nav-top" class="fa fa-bars"></i> -->
             
@@ -301,7 +307,7 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
     <ul class="wy-breadcrumbs">
-        <li><a href="javascript:void(0)">Introduction</a></li>
+        <li><a href="javascript:void(0)">Uninstalling the Veeam Plugin</a></li>
         <!--
         <li class="wy-breadcrumbs-aside">
             <a href="javascript:void(0)" class="language-picker"><i class="fa fa-globe"></i> <i class="fa fa-caret-down"></i></a>
@@ -329,38 +335,102 @@
                             <div itemprop="articleBody">
                                 <div class="section"> <!-- rtd needs a section to handle css properly -->
                                 
-                                <h1 id="veeam-plugin-for-vmware-vcloud-director-deprecated">Veeam Plugin for VMware vCloud Director (deprecated)</h1>
-<p><div class="admonition note"><p class="first admonition-title">Note</p><p class="last">
-Veeam Backup &amp; Replication 11 introduced an official [VCD plugin](https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110) which replaces this plugin. Only use this plugin if you&apos;re running a version prior to v11.
-
-If you are looking to upgrade to the new plugin, [uninstall this plugin](plugin-uninstall-instructions.md) and then follow [Veeam instructions](https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110) for installing the new plugin.
-</p></div></p>
-<p>The Veeam Plugin for vCloud Director (VCD) allows the <a href="https://helpcenter.veeam.com/docs/backup/em/em_managing_vms_in_vcd_org.html?ver=95u4" target="_blank">Veeam VCD Self-Service Backup Portal</a> to be accessible natively within the VCD Web UI. It leverages the <a href="https://github.com/vmware/vcd-ext-sdk" target="_blank">VCD Extension SDK</a> to make this possible.</p>
-<p>This documentation will provide steps for Installing, Configuring, and Using the Veeam Plugin for VCD.</p>
-<p><a href="plugin-upgrade-instructions.html">If you&apos;re looking for instructions on how to <strong>upgrade</strong> the Veeam Plugin to the latest version, please click here.</a></p>
-<p><div class="admonition note"><p class="first admonition-title">Note</p><p class="last">
-IIS configuration (see step #2 below) must be performed any time you install/upgrade Enterprise Manager.
-</p></div></p>
-<h2 id="steps">Steps</h2>
+                                <h1 id="veeam-plugin-for-vcd">Veeam Plugin for VCD</h1>
+<h2 id="how-to-uninstall-the-veeam-plugin">How to uninstall the Veeam Plugin</h2>
+<p>These instructions explain how to uninstall the Veeam Plugin for VCD. The uninstall process can be broken down into these simple steps:</p>
 <ol>
-<li><a href="vssp-setup.html">Install and Configure the Veeam VCD Self-Service Backup Portal (VSSP)</a></li>
-<li><a href="vssp-iis-config.html">Configure Enterprise Manager IIS web server to support Cross-Origin API requests</a></li>
-<li><a href="plugin-deployment-methods.html">Deploy the Veeam Plugin for vCloud Director</a></li>
-<li><a href="plugin-configuration-provider.html">Configure the Veeam Plugin for vCloud Director</a></li>
-<li><a href="plugin-usage-tenant.html">Tenant Portal Usage Instructions</a></li>
+<li><a href="#removing-the-veeam-plugin-from-vcd">Remove the Veeam Plugin from VCD</a></li>
+<li><a href="#removing-the-custom-iis-configuration">Remove the custom IIS configuration</a></li>
 </ol>
-<p><strong>Note:</strong> VSSP must be publicly accessible <em>(default port 9443)</em></p>
-<h2 id="veeam-plugin-prerequisites">Veeam Plugin Prerequisites</h2>
+<h2 id="removing-the-veeam-plugin-from-vcd">Removing the Veeam Plugin from VCD</h2>
+<p>Removal of the Veeam Plugin from VCD depends on the version of VCD that you&apos;re running. If you&apos;re running VCD 9.7 <em>or newer</em>, the recommended method would be using the <a href="#using-vmware-plugin-lifecycle-manager">VMware Plugin Lifecycle Manager</a>. If you&apos;re running VCD 9.1 or 9.5, the recommended method would be using <a href="#using-python">Python</a>.</p>
+<h3 id="using-vmware-plugin-lifecycle-manager">Using VMware Plugin Lifecycle Manager</h3>
 <ul>
-<li>Veeam Backup Enterprise Manager (EM) 9.5 Update 4b <em>and newer</em></li>
-<li>Supports vCloud Director (VCD) 9.1.0.2 - 10.x<ul>
-<li><em>vCD 10.x support requires EM 10.x</em></li>
+<li>Open <code>Customize Portal</code> or <code>Plugin Lifecycle Management</code> from the drop-down in the VCD Provider Portal<ul>
+<li><em>Example:</em> <code>https://vcd.home.lab/provider</code></li>
 </ul>
 </li>
-<li>Valid SSL Certificates must be configured for both <em>EM</em> and <em>vCD</em><ul>
-<li>Self-Signed SSL Certificates need to be trusted by the client before the plugin will work</li>
+</ul>
+<p><img src="images/vcd-dropdown-with-customize.png" alt="VCD Drop-Down with Customize Portal"></p>
+<ul>
+<li>Mark the checkbox next to the <code>Veeam Self-Service Portal</code> plugin and click <code>DELETE</code></li>
+</ul>
+<p><img src="images/delete-veeam-plugin.png" alt="Delete Veeam Plugin"></p>
+<ul>
+<li>Refresh your browser window (or logout/login to VCD)</li>
+<li>Verify the plugin no longer shows up in the drop-down for VCD</li>
+</ul>
+<p><img src="images/vcd-dropdown-plugin-manager.png" alt="VMware Plugin Lifecycle Manager"></p>
+<h3 id="using-python">Using Python</h3>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>Python 3.4+</li>
+<li>Python libraries required:<ul>
+<li><code>requests</code></li>
 </ul>
 </li>
+</ul>
+<h4 id="steps">Steps</h4>
+<ul>
+<li><a href="https://github.com/VeeamHub/veeam-plugin-for-vcd/releases/latest" target="_blank">Download the current plugin</a><ul>
+<li><code>veeam-vcd-plugin-X.X.X.zip</code></li>
+</ul>
+</li>
+<li>Unzip the plugin to your computer, open a terminal, &amp; navigate to the plugin folder</li>
+<li>Modify the values in the <code>manage_plugin.json</code> accordingly for your VCD environment<ul>
+<li><em>System Administrator account is required</em></li>
+</ul>
+</li>
+</ul>
+<p><em>Sample <code>manage_plugin.json</code>:</em></p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;administrator&quot;</span>,
+  <span class="hljs-string">&quot;org&quot;</span>: <span class="hljs-string">&quot;System&quot;</span>,
+  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;P@$$w0rd&quot;</span>,
+  <span class="hljs-string">&quot;vcdUrlBase&quot;</span>: <span class="hljs-string">&quot;https://vmware.example.com&quot;</span>
+}
+</code></pre>
+<ul>
+<li>Execute the Python script below to list already install VCD plugins:</li>
+</ul>
+<pre><code class="lang-text">python3 ./manage_plugin.py list
+</code></pre>
+<ul>
+<li>Find plugin named <code>Veeam Self-Service Portal by Veeam</code> and copy the <code>ID</code> field as shown below</li>
+</ul>
+<p><img src="images/python-list.png" alt="Python List"></p>
+<ul>
+<li>Execute the Python script below to remove the plugin from VCD:</li>
+</ul>
+<pre><code class="lang-text">python3 ./manage_plugin.py unregister &lt;plugin-id&gt;
+</code></pre>
+<ul>
+<li>Refresh your browser window (or logout/login to VCD)</li>
+<li>Verify the plugin no longer shows up in the drop-down for VCD</li>
+</ul>
+<p><img src="images/vcd-dropdown-plugin-manager.png" alt="VMware Plugin Lifecycle Manager"></p>
+<h2 id="removing-the-custom-iis-configuration">Removing the custom IIS configuration</h2>
+<p>In this step, we will be removing any custom IIS configurations we applied when installing the plugin.</p>
+<h3 id="remove-http-response-headers">Remove HTTP Response Headers</h3>
+<p>Please follow the steps below:</p>
+<ul>
+<li>On your EM server, open <code>Internet Information Services (IIS) Manager</code></li>
+<li>Navigate to the <code>VeeamBackup</code> site (see screenshot below) and open <code>HTTP Response Headers</code></li>
+</ul>
+<p><img src="images/iis-veeam.png" alt="IIS Veeam Site"></p>
+<ul>
+<li>Delete ALL headers present</li>
+</ul>
+<h3 id="remove-url-rewrite-rules">Remove URL Rewrite Rules</h3>
+<p>If the version of Enterprise Manager you&apos;re running is v10 or newer, you&apos;ll also need to remove the following additional configuration:</p>
+<ul>
+<li>On your EM server, open <code>Internet Information Services (IIS) Manager</code></li>
+<li>Navigate to the <code>VeeamBackup</code> site (see screenshot below) and open <code>URL Rewrite</code></li>
+</ul>
+<p><img src="images/iis-veeam-url-rewrite.png" alt="IIS Veeam Site URL Rewrite"></p>
+<ul>
+<li>Delete the following <em>Outbound Rule</em>: <code>Allow iframe for vCloud</code></li>
+<li>Delete the following <em>Precondition for Outbound Rules</em>: <code>vCloud</code></li>
 </ul>
 
                                 
@@ -388,8 +458,10 @@ IIS configuration (see step #2 below) must be performed any time you install/upg
                             <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
                                 
                                     
+                                        <a href="plugin-upgrade-instructions.html" class="btn btn-neutral" title="" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
                                     
-                                        <a href="plugin-upgrade-instructions.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+                                    
+                                        <a href="vssp-setup.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
                                     
                                 
                             </div>
@@ -405,7 +477,7 @@ IIS configuration (see step #2 below) must be performed any time you install/upg
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Upgrading the Veeam Plugin","level":"1.2","depth":1,"path":"plugin-upgrade-instructions.md","ref":"plugin-upgrade-instructions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-veeam"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-veeam":{"langs":["en"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Veeam Plugin for VCD","gitbook":"3.x.x"},"file":{"path":"README.md","mtime":"2021-07-26T18:12:38.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-26T18:42:04.504Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Uninstalling the Veeam Plugin","level":"1.3","depth":1,"next":{"title":"1. VSSP Setup","level":"2.1","depth":1,"path":"vssp-setup.md","ref":"vssp-setup.md","articles":[]},"previous":{"title":"Upgrading the Veeam Plugin","level":"1.2","depth":1,"path":"plugin-upgrade-instructions.md","ref":"plugin-upgrade-instructions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-veeam"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-veeam":{"langs":["en"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Veeam Plugin for VCD","gitbook":"3.x.x"},"file":{"path":"plugin-uninstall-instructions.md","mtime":"2021-07-26T18:03:14.698Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-26T18:42:04.504Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

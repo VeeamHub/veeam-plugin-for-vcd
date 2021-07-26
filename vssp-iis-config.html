@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2. IIS Configuration · Veeam Plugin for vCD</title>
+        <title>2. IIS Configuration · Veeam Plugin for VCD</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -117,6 +117,20 @@
             
                     <span class="toctree-expand"></span>
                     Upgrading the Veeam Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        
+        <li class="toctree-l1 " data-level="1.3" data-path="plugin-uninstall-instructions.html">
+            
+                <a href="plugin-uninstall-instructions.html">
+            
+                    <span class="toctree-expand"></span>
+                    Uninstalling the Veeam Plugin
             
                 </a>
             
@@ -238,7 +252,7 @@
                 <a href="plugin-configuration-provider.html">
             
                     <span class="toctree-expand"></span>
-                    4. vCD Provider Portal Configuration
+                    4. VCD Provider Portal Configuration
             
                 </a>
             
@@ -252,7 +266,7 @@
                 <a href="plugin-usage-tenant.html">
             
                     <span class="toctree-expand"></span>
-                    5. vCD Tenant Portal Usage
+                    5. VCD Tenant Portal Usage
             
                 </a>
             
@@ -313,7 +327,7 @@
                             <div itemprop="articleBody">
                                 <div class="section"> <!-- rtd needs a section to handle css properly -->
                                 
-                                <h1 id="veeam-vcd-self-service-backup-portal-vssp">Veeam vCD Self-Service Backup Portal (VSSP)</h1>
+                                <h1 id="veeam-vcd-self-service-backup-portal-vssp">Veeam VCD Self-Service Backup Portal (VSSP)</h1>
 <p><div class="admonition note"><p class="first admonition-title">Note</p><p class="last">
 The configuration below must be performed any time you install/upgrade Enterprise Manager.
 </p></div></p>
@@ -341,17 +355,17 @@ The configuration below must be performed any time you install/upgrade Enterpris
 <li>Add/Update the below entries:<ul>
 <li>Access-Control-Allow-Credentials: <code>true</code></li>
 <li>Access-Control-Allow-Headers: <code>*</code></li>
-<li>Access-Control-Allow-Origin: <code>&lt;vCD URL&gt;</code></li>
+<li>Access-Control-Allow-Origin: <code>&lt;VCD URL&gt;</code></li>
 <li>Access-Control-Expose-Headers: <code>*</code></li>
-<li>X-Frame-Options: <code>ALLOW-FROM &lt;vCD URL&gt;</code></li>
-<li>Content-Security-Policy: <code>frame-ancestors &lt;vCD FQDN&gt;</code><ul>
+<li>X-Frame-Options: <code>ALLOW-FROM &lt;VCD URL&gt;</code></li>
+<li>Content-Security-Policy: <code>frame-ancestors &lt;VCD FQDN&gt;</code><ul>
 <li><em>Content-Security-Policy is not required for EM v10</em></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>Note the screenshot below. In this example, the vCD public URL is <code>https://veeamvcd.duckdns.org</code>.</p>
+<p>Note the screenshot below. In this example, the VCD public URL is <code>https://veeamvcd.duckdns.org</code>.</p>
 <p><img src="images/iis-http-headers.png" alt="IIS HTTP Headers"></p>
 <h4 id="enterprise-manager-v10">Enterprise Manager v10</h4>
 <p>If version of Enterprise Manager you&apos;re running is v10 or newer, you&apos;ll also need the following additional configuration:</p>
@@ -394,7 +408,7 @@ The configuration below must be performed any time you install/upgrade Enterpris
 </li>
 <li>Action<ul>
 <li>Action type: <code>Rewrite</code></li>
-<li>Action Properties Value: <code>{C:1};{C:2};{C:3};{C:4};{C:5};{C:6};{C:7};{C:8};{C:9};{C:10};{C:11}; frame-ancestors &lt;vCD FQDN&gt;;</code><ul>
+<li>Action Properties Value: <code>{C:1};{C:2};{C:3};{C:4};{C:5};{C:6};{C:7};{C:8};{C:9};{C:10};{C:11}; frame-ancestors &lt;VCD FQDN&gt;;</code><ul>
 <li>Example: <em>frame-ancestors veeamvcd.duckdns.org</em></li>
 </ul>
 </li>
@@ -449,7 +463,7 @@ The configuration below must be performed any time you install/upgrade Enterpris
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. IIS Configuration","level":"2.2","depth":1,"next":{"title":"3. Deployment Methods","level":"3.1","depth":1,"path":"plugin-deployment-methods.md","ref":"plugin-deployment-methods.md","articles":[{"title":"Using VMware Plugin Lifecycle Manager","level":"3.1.1","depth":2,"path":"plugin-deploy-plugin-manager.md","ref":"plugin-deploy-plugin-manager.md","articles":[]},{"title":"Using Python","level":"3.1.2","depth":2,"path":"plugin-deploy-python.md","ref":"plugin-deploy-python.md","articles":[]}]},"previous":{"title":"1. VSSP Setup","level":"2.1","depth":1,"path":"vssp-setup.md","ref":"vssp-setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-veeam"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-veeam":{"langs":["en"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Veeam Plugin for vCD","gitbook":"3.x.x"},"file":{"path":"vssp-iis-config.md","mtime":"2020-02-13T19:17:59.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-13T19:19:05.606Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. IIS Configuration","level":"2.2","depth":1,"next":{"title":"3. Deployment Methods","level":"3.1","depth":1,"path":"plugin-deployment-methods.md","ref":"plugin-deployment-methods.md","articles":[{"title":"Using VMware Plugin Lifecycle Manager","level":"3.1.1","depth":2,"path":"plugin-deploy-plugin-manager.md","ref":"plugin-deploy-plugin-manager.md","articles":[]},{"title":"Using Python","level":"3.1.2","depth":2,"path":"plugin-deploy-python.md","ref":"plugin-deploy-python.md","articles":[]}]},"previous":{"title":"1. VSSP Setup","level":"2.1","depth":1,"path":"vssp-setup.md","ref":"vssp-setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-veeam"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-veeam":{"langs":["en"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Veeam Plugin for VCD","gitbook":"3.x.x"},"file":{"path":"vssp-iis-config.md","mtime":"2021-07-26T17:36:54.822Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-26T18:42:04.504Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
