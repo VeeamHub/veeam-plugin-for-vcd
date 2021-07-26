@@ -1,10 +1,10 @@
-# Veeam Plugin for vCD
+# Veeam Plugin for VCD
 
 ## Provider Portal Configuration
 
-These instructions are for Service Providers explaining how to configure the Veeam Plugin for vCD after it's been deployed to vCloud Director.
+These instructions are for Service Providers explaining how to configure the Veeam Plugin for VCD after it's been deployed to vCloud Director.
 
-* Open `Managed Backups` from the vCD Provider Portal
+* Open `Managed Backups` from the VCD Provider Portal
   * *Sample:* `https://vcd.home.lab/provider`
 
 ![Veeam Plugin](images/veeam-plugin.png)
@@ -23,9 +23,9 @@ These instructions are for Service Providers explaining how to configure the Vee
 
 ![Confirm Portal Settings](images/confirm-portal-settings.png)
 
-* At this point, you'll see all vCD Organizations have had their Veeam Portal URL configured.
+* At this point, you'll see all VCD Organizations have had their Veeam Portal URL configured.
 
 ![Portal Config Correct](images/portal-config-correct.png)
 
-* vCD Tenants can now use the plugin
-  * _This assumes you've already published the Veeam Plugin for vCD to the Tenant(s) and [configured the Tenant Organization in the VSSP](https://helpcenter.veeam.com/docs/backup/em/em_configure_vcd_org.html?ver=95u4)._
+* VCD Tenants can now use the plugin
+  * _This assumes you've already published the Veeam Plugin for VCD to the Tenant(s) and [configured the Tenant Organization in the VSSP](https://helpcenter.veeam.com/docs/backup/em/em_configure_vcd_org.html?ver=95u4)._

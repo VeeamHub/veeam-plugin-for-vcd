@@ -1,6 +1,6 @@
-# Veeam vCD Self-Service Backup Portal (VSSP) Setup
+# Veeam VCD Self-Service Backup Portal (VSSP) Setup
 
-The Veeam Plugin for vCD is reliant on the [VSSP](https://helpcenter.veeam.com/docs/backup/em/em_managing_vms_in_vcd_org.html?ver=95u4). It must be fully configured and accessible via the internet prior to plugin installation.
+The Veeam Plugin for VCD is reliant on the [VSSP](https://helpcenter.veeam.com/docs/backup/em/em_managing_vms_in_vcd_org.html?ver=95u4). It must be fully configured and accessible via the internet prior to plugin installation.
 
 While architecture & design for the VSSP are outside the scope of this documentation, below are some useful links to consider. The only added configuration to the VSSP for the Veeam Plugin can be found [here](vssp-iis-config.md).
 

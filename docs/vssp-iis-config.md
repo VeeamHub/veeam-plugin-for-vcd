@@ -1,4 +1,4 @@
-# Veeam vCD Self-Service Backup Portal (VSSP)
+# Veeam VCD Self-Service Backup Portal (VSSP)
 
 {% note %}
 The configuration below must be performed any time you install/upgrade Enterprise Manager.
@@ -32,13 +32,13 @@ Please follow the steps below:
 * Add/Update the below entries:
   * Access-Control-Allow-Credentials: `true`
   * Access-Control-Allow-Headers: `*`
-  * Access-Control-Allow-Origin: `<vCD URL>`
+  * Access-Control-Allow-Origin: `<VCD URL>`
   * Access-Control-Expose-Headers: `*`
-  * X-Frame-Options: `ALLOW-FROM <vCD URL>`
-  * Content-Security-Policy: `frame-ancestors <vCD FQDN>`
+  * X-Frame-Options: `ALLOW-FROM <VCD URL>`
+  * Content-Security-Policy: `frame-ancestors <VCD FQDN>`
     * _Content-Security-Policy is not required for EM v10_
 
-Note the screenshot below. In this example, the vCD public URL is `https://veeamvcd.duckdns.org`.
+Note the screenshot below. In this example, the VCD public URL is `https://veeamvcd.duckdns.org`.
 
 ![IIS HTTP Headers](images/iis-http-headers.png)
 
@@ -78,6 +78,6 @@ If version of Enterprise Manager you're running is v10 or newer, you'll also nee
     * Track capture groups across conditions: _checkbox checked_
   * Action
     * Action type: `Rewrite`
-    * Action Properties Value: `{C:1};{C:2};{C:3};{C:4};{C:5};{C:6};{C:7};{C:8};{C:9};{C:10};{C:11}; frame-ancestors <vCD FQDN>;`
+    * Action Properties Value: `{C:1};{C:2};{C:3};{C:4};{C:5};{C:6};{C:7};{C:8};{C:9};{C:10};{C:11}; frame-ancestors <VCD FQDN>;`
       * Example: _frame-ancestors veeamvcd.duckdns.org_
     * Replace existing server variable value: _checkbox checked_

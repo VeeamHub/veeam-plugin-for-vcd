@@ -1,6 +1,6 @@
 # Veeam Plugin Deployment Methods
 
-Veeam Plugin for vCD deployment can be completed using many methods. In this documentation, listed are the two easiest methods. The method that you use will depend on the vCD version being used.
+Veeam Plugin for VCD deployment can be completed using many methods. In this documentation, listed are the two easiest methods. The method that you use will depend on the VCD version being used.
 
 ## vCloud Director 9.7 & 10.x
 
