@@ -1,0 +1,101 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ page.title }} · {{ super() }}{% endblock %}
+
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    {% if page.next and page.next.path %}
+    <link rel="next" href="{{ page.next.path|resolveFile }}" />
+    {% endif %}
+    {% if page.previous and page.previous.path %}
+    <link rel="prev" href="{{ page.previous.path|resolveFile }}" />
+    {% endif %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ "gitbook.js"|resolveAsset }}"></script>
+    <script src="{{ "theme-default.js"|resolveAsset }}"></script>
+    <script src="{{ "theme.js"|resolveAsset }}"></script>
+    {% for resource in plugins.resources.js %}
+        {% if resource.url %}
+        <script src="{{ resource.url }}"></script>
+        {% else %}
+        <script src="{{ resource.path|resolveAsset }}"></script>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+<div class="book wy-grid-for-nav">
+    {% block book_sidebar %}
+    <nav role="navigation" data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <!-- here comes title -->
+                <div role="search">
+                    {% block search_input %}{% endblock %}
+                </div>
+            </div>
+            {% block book_summary %}  
+                {% include "website/summary.html" %}
+            {% endblock %}
+            
+        </div>
+    </nav>
+    {% endblock %}
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav class="wy-nav-top" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars shift-menu"></i>
+            <a href="#">{{ page.title }}</a>
+            {% block mobile_nav %}
+                <!-- <i data-toggle="wy-nav-top" class="fa fa-bars"></i> -->
+            {% endblock %}
+        </nav>
+        <div class="wy-nav-content">
+            {% block book_body %}
+                <div class="rst-content">
+                    {% include "website/header.html" %}
+
+                    {% block book_inner %}
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        {% block search_results %}
+                            <div itemprop="articleBody">
+                                <div class="section"> <!-- rtd needs a section to handle css properly -->
+                                {% block page %}
+                                {{ page.content|safe }}
+                                {% endblock %}
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                    <footer>
+                            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+                                {% block book_navigation %}
+                                    {% if page.previous and page.previous.path %}
+                                        <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> {{ "PREVIOUS"|t }}</a>
+                                    {% endif %}
+                                    {% if page.next and page.next.path %}
+                                        <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ "NEXT"|t }} <span class="fa fa-arrow-circle-right"></span></a>
+                                    {% endif %}
+                                {% endblock %}
+                            </div>
+                    </footer>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    </section>
+
+    
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+        });
+    </script>
+</div>
+{% endblock %}

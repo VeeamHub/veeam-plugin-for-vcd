@@ -1,0 +1,59 @@
+{% macro articles(_articles) %}
+    {% for article in _articles %}
+        {% set menu_level = article.level.split('.').length-1 %}
+        <li class="toctree-l{{ menu_level }} {% if page.level.startsWith(article.level+'.') or page.level==article.level %}current{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
+            {% if article.path and getPageByPath(article.path) %}
+                <a href="{{ article.path|resolveFile }}{{ article.anchor }}">
+            {% elif article.url %}
+                <a target="_blank" href="{{ article.url }}">
+            {% endif %}
+                    <span class="toctree-expand"></span>
+                    {{ article.title }}
+            {% if article.path  or article.url %}
+                </a>
+            {% endif %}
+
+            {% if article.articles.length > 0 %}
+            <ul class="articles">
+                {{ articles(article.articles, file, config) }}
+            </ul>
+            {% elif page.level==article.level %}
+                {% set h2s = page.content.match(r/<h2[^>]*>[^<]*<\/h2>/g) %}
+                {% if h2s.length > 0 %}
+                <ul>
+                    {% for h2_item in h2s %}
+                    {% set h2_id = h2_item.replace('<h2 id="', '#').replace(r/".*/, '') %}
+                    {% set h2_content = h2_item.replace(r/<[^>]+>/g, '') %}
+                    <li class="toctree-l{{menu_level+1}}"><a class="reference internal" href="{{h2_id}}">{{h2_content}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+    {% set _divider = false %}
+    {% if config.links.sidebar  %}
+    {% for linkTitle, link in config.links.sidebar  %}
+        {% set _divider = true %}
+        <li>
+            <a href="{{ link }}" target="_blank" class="custom-link">{{ linkTitle }}</a>
+        </li>
+    {% endfor %}
+    {% endif %}
+
+    {% if _divider %}
+    <li class="divider"></li>
+    {% endif %}
+
+    {% for part in summary.parts %}
+        {% if part.title %}
+        <p class="caption"><span class="caption-text">{{ part.title }}</span></p>
+        {% elif not loop.first %}
+        <li class="divider"></li>
+        {% endif %}
+        {{ articles(part.articles, file, config) }}
+    {% endfor %}
+</div>
