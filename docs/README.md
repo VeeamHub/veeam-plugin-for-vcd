@@ -1,9 +1,9 @@
 # Veeam Plugin for VMware vCloud Director (deprecated)
 
 {% note %}
-Veeam Backup & Replication 11 introduced an official [VCD plugin](https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110) which replaces this plugin. Only use this plugin if you're running a version prior to v11.
+Veeam Backup & Replication 11 introduced an official <a href="https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110">VCD plugin</a> which replaces this plugin. Only use this plugin if you're running a version prior to v11.
 
-If you are looking to upgrade to the new plugin, [uninstall this plugin](plugin-uninstall-instructions.md) and then follow [Veeam instructions](https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110) for installing the new plugin.
+If you are looking to upgrade to the new plugin, <a href="https://veeamhub.github.io/veeam-plugin-for-vcd/plugin-uninstall-instructions.html">uninstall this plugin</a> and then follow <a href="https://helpcenter.veeam.com/docs/backup/em/vcd_plugin_upload_configure.html?ver=110">Veeam instructions</a> for installing the new plugin.
 {% endnote %}
 
 The Veeam Plugin for vCloud Director (VCD) allows the [Veeam VCD Self-Service Backup Portal](https://helpcenter.veeam.com/docs/backup/em/em_managing_vms_in_vcd_org.html?ver=95u4) to be accessible natively within the VCD Web UI. It leverages the [VCD Extension SDK](https://github.com/vmware/vcd-ext-sdk) to make this possible.
